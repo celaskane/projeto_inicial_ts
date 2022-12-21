@@ -1,14 +1,25 @@
-function combina(entrada1: number | string, entrada2: number | string) {
+function combina(
+    entrada1: number | string, 
+    entrada2: number | string, 
+    resultadoConvertido: 'numero' | 'texto'
+    ) {
     let resultado;
-    if (typeof entrada1 === 'number' && typeof entrada2 === 'number')
-        resultado = entrada1 + entrada2;
+    if (typeof entrada1 === 'number' && typeof entrada2 === 'number' || resultadoConvertido === 'numero')
+        resultado = +entrada1 + +entrada2; //+ converte para number
     else
         resultado = entrada1.toString() + entrada2.toString();
     return resultado;
+    /* if (resultadoConvertido === 'numero')
+        return +resultado;
+    else
+        return resultado.toString(); */
 }
 
-const idadesCombinadas = combina(30, 25);
+const idadesCombinadas = combina(30, 25, 'numero');
 console.log(idadesCombinadas);
 
-const nomesCombinados = combina('Feijão', 'Puro');
+const idadesCombinadasString = combina('30', '25', 'numero');
+console.log(idadesCombinadasString);
+
+const nomesCombinados = combina('Feijão', 'Puro', 'texto');
 console.log(nomesCombinados);
