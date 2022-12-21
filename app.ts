@@ -12,4 +12,12 @@ function mostraResultado(numero: number): void {    //sempre usar void, raro usa
 
 mostraResultado(soma(5, 12));
 
+let valoresCombinados: (a: number, b: number) => number;    //definindo propriedades da função que deve ser chamada
+
+valoresCombinados = soma;
+//valoresCombinados = print;
+//valoresCombinados = 5;
+
+console.log(valoresCombinados(7, 7));
+
 //let algumValor: undefined;
