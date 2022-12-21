@@ -2,7 +2,7 @@
     nome: string;
     idade: number;
 } = { */
-const pessoa: {
+/* const pessoa: {
     nome: string;
     idade: number;
     hobbies: string[];
@@ -12,6 +12,15 @@ const pessoa: {
     idade: 26,
     hobbies: ['Esporters', 'Culinária'],
     cargo: [7, 'Agrimensor']
+}; */
+
+enum Cargo { AGRIMENSOR, OCEANOGRAFO, MENSAGEIRO }; // agr = 1..n se quiser iniciar com outro índice
+
+const pessoa = {
+    nome: 'Alejandro',
+    idade: 26,
+    hobbies: ['Esporters', 'Culinária'],
+    cargo: Cargo.AGRIMENSOR
 };
 
 /* pessoa.cargo.push('Oceanógrafo');
@@ -23,9 +32,12 @@ atividadesFavoritas = ['Esportes'];
 
 console.log(pessoa.nome);
 console.log(pessoa.idade);
+console.log(pessoa.cargo);
 
 for (const hobby of pessoa.hobbies) {
     console.log(hobby.toUpperCase());
 }
 
-console.log(pessoa.cargo);
+if (pessoa.cargo === Cargo.AGRIMENSOR) {
+    console.log('é um agrimensor');
+}
