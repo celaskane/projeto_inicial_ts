@@ -1,28 +1,15 @@
-type Combinavel = number | string;
-type DescritivoConversao = 'numero' | 'texto';
+/* function soma(n1: number, n2: number): string //valor do return {
+    return n1.toString() + n2.toString();
+} */
 
-function combina(
-    entrada1: Combinavel, 
-    entrada2: Combinavel, 
-    resultadoConvertido: DescritivoConversao
-    ) {
-    let resultado;
-    if (typeof entrada1 === 'number' && typeof entrada2 === 'number' || resultadoConvertido === 'numero')
-        resultado = +entrada1 + +entrada2; //+ converte para number
-    else
-        resultado = entrada1.toString() + entrada2.toString();
-    return resultado;
-    /* if (resultadoConvertido === 'numero')
-        return +resultado;
-    else
-        return resultado.toString(); */
+function soma(n1: number, n2: number) {
+    return n1 + n2;
 }
 
-const idadesCombinadas = combina(30, 25, 'numero');
-console.log(idadesCombinadas);
+function mostraResultado(numero: number): void {    //sempre usar void, raro usar undefined
+    console.log('resultado:' + numero);
+}
 
-const idadesCombinadasString = combina('30', '25', 'numero');
-console.log(idadesCombinadasString);
+mostraResultado(soma(5, 12));
 
-const nomesCombinados = combina('Feijão', 'Puro', 'texto');
-console.log(nomesCombinados);
+//let algumValor: undefined;
