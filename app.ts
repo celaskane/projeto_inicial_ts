@@ -1,7 +1,10 @@
+type Combinavel = number | string;
+type DescritivoConversao = 'numero' | 'texto';
+
 function combina(
-    entrada1: number | string, 
-    entrada2: number | string, 
-    resultadoConvertido: 'numero' | 'texto'
+    entrada1: Combinavel, 
+    entrada2: Combinavel, 
+    resultadoConvertido: DescritivoConversao
     ) {
     let resultado;
     if (typeof entrada1 === 'number' && typeof entrada2 === 'number' || resultadoConvertido === 'numero')
